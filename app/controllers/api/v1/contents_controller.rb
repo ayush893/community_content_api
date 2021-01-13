@@ -2,7 +2,7 @@
 
 module Api
     module V1
-      class UsersController < ApplicationController
+      class ContentController < ApplicationController
         include JSONAPI::ActsAsResourceController
         before_action :authenticate_user!
 
