@@ -1,11 +1,7 @@
-# frozen_string_literal: true
-
 class RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   def create
-    #TODO: only if user (discord_id ) is not already presents
-
     build_resource(sign_up_params)
 
     resource.save
@@ -13,6 +9,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:user).permit(:username,:password)
+    params.require(:user).permit(:email,:password, :username)
   end
 end
